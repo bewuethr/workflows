@@ -71,6 +71,18 @@ jobs:
                   > ".github/linters/$fname"
           done
 
+          fname='.editorconfig'
+          if [[ -r $fname ]]; then
+              exit 0
+          fi
+
+          echo "Fetching default $fname..." >&2
+
+          gh api "repos/bewuethr/workflows/contents/$fname" \
+              --jq '.content' \
+              | base64 --decode \
+              > "$fname"
+
       - name: Lint code base
         uses: github/super-linter/slim@v4.9.5
         env:
