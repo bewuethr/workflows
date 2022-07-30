@@ -1,4 +1,9 @@
-# workflows
+# Workflows
+
+[![Lint code base][lintbadge]][lintworkflow]
+
+[lintbadge]:    <https://github.com/bewuethr/workflows/actions/workflows/linter-caller.yml/badge.svg>
+[lintworkflow]: <https://github.com/bewuethr/workflows/actions/workflows/linter-caller.yml>
 
 This repo hosts reusable workflows.
 
