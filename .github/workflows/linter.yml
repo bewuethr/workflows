@@ -22,6 +22,11 @@ on:
         type: string
         required: false
         default:
+      validate-json:
+        description: Run eslint for JSON
+        type: string
+        required: false
+        default:
       validate-lua:
         description: Run luacheck
         type: string
@@ -62,4 +67,5 @@ jobs:
           # Optional linters
           VALIDATE_CSS: ${{ inputs.validate-css }}
           VALIDATE_DOCKERFILE_HADOLINT: ${{ inputs.validate-dockerfile }}
+          VALIDATE_JSON: ${{ inputs.validate-json }}
           VALIDATE_LUA: ${{ inputs.validate-lua }}
