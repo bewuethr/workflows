@@ -49,6 +49,7 @@ jobs:
       - name: Fetch default style files
         env:
           css: ${{ inputs.validate-css }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           mkdir --parents .github/linters
           fnames=('.markdown-lint.yml' '.yaml-lint.yml')
