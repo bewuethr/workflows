@@ -31,6 +31,6 @@ jobs:
         uses: actions/add-to-project@v0.3.0
         with:
           project-url: ${{ inputs.project-url }}
-          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
-          labeled: ${{ input.labeled }}
-          label-operator: ${{ input.label-operator }}
+          github-token: ${{ secrets.github-token }}
+          labeled: ${{ inputs.labeled }}
+          label-operator: ${{ inputs.label-operator }}
