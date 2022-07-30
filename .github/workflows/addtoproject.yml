@@ -1,0 +1,36 @@
+name: Add issues and PRs to project
+
+on:
+  workflow_call:
+    inputs:
+      project-url:
+        description: URL of project to add to
+        type: string
+        required: true
+      labeled:
+        description: Comma-separated list of labels to use as filter
+        type: string
+        required: false
+      label-operator:
+        description: >
+          Behaviour of labels filter; one of AND, NOT, and OR (default)
+        type: string
+        required: false
+    secrets:
+      github-token:
+        description: A PAT with repo and project scopes
+        required: true
+
+jobs:
+  add-to-project:
+    name: Add issue or PR
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Add to project
+        uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: ${{ inputs.project-url }}
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          labeled: ${{ input.labeled }}
+          label-operator: ${{ input.label-operator }}
