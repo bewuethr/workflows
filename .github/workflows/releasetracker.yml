@@ -1,0 +1,38 @@
+name: Move release tags
+
+on:
+  workflow_call:
+    inputs:
+      update-latest:
+        description: Update a "latest" tag
+        type: boolean
+        required: false
+        default: false
+      update-minor:
+        description: Update vX.Y tags
+        type: boolean
+        required: false
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-release-tags:
+    name: Update release tags
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Update release tags for latest major and minor releases
+        uses: bewuethr/release-tracker-action@v1.4.4
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          update-latest: ${{ inputs.update-latest }}
+          update-minor: ${{ inputs.update-minor }}
