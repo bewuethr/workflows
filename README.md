@@ -15,6 +15,10 @@ This repo hosts reusable workflows.
   detection, markdownlint, shfmt, and yamllint are run by default; optionally,
   also stylelint (CSS), hadolint (Dockerfiles), eslint (JSON), and luacheck can
   be run.
+- `releasetracker.yml`: wraps [*bewuethr/release-tracker-action*][rt] and takes
+  the same parameters as the action (but with modified defaults)
 
 [atp]: <https://github.com/actions/add-to-project>
 [sl]: <https://github.com/github/super-linter>
+[rt]: <https://github.com/bewuethr/release-tracker-action>
+
