@@ -21,4 +21,3 @@ This repo hosts reusable workflows.
 [atp]: <https://github.com/actions/add-to-project>
 [sl]: <https://github.com/github/super-linter>
 [rt]: <https://github.com/bewuethr/release-tracker-action>
-
