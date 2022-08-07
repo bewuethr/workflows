@@ -34,7 +34,7 @@ on:
         default:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.job }}-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
