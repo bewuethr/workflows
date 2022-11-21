@@ -108,7 +108,7 @@ jobs:
       - name: Load image on cache hit
         if: steps.cache.outputs.cache-hit
         run: |
-          docker load --input .cache/docker-images/super-linter-slim-v4.8.7.tar
+          docker load --input .cache/docker-images/super-linter-slim-v4.9.7.tar
 
       - name: Lint code base
         uses: github/super-linter/slim@v4.9.7
