@@ -10,4 +10,4 @@ on:
 jobs:
   lint:
     name: Lint code base
-    uses: bewuethr/workflows/.github/workflows/linter.yml@main
+    uses: bewuethr/workflows/.github/workflows/linter.yml@6-cache-docker-image
