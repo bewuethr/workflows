@@ -94,10 +94,14 @@ jobs:
           path: .cache/docker-images
           key: super-linter-slim-v4.9.7
 
-      - name: Pull image on cache miss
+      - name: Pull and store image on cache miss
         if: '!steps.cache.outputs.cache-hit'
         run: |
-          docker pull ghcr.io/github/super-linter:slim-v4.9.7
+          if ! docker inspect \ --format ' ' \
+              ghcr.io/github/super-linter:slim-v4.9.7
+          then
+              docker pull ghcr.io/github/super-linter:slim-v4.9.7
+          fi
           docker save ghcr.io/github/super-linter:slim-v4.9.7 \
               --output .cache/docker-images/super-linter-slim-v4.9.7.tar
 
