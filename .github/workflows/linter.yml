@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v4.1.1
         with:
           show-progress: false
 
