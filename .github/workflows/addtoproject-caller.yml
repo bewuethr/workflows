@@ -9,7 +9,7 @@ on:
 jobs:
   add-to-project:
     name: Add issues to hobby project
-    uses: bewuethr/workflows/.github/workflows/addtoproject.yml@main
+    uses: ./.github/workflows/addtoproject.yml
     with:
       project-url: https://github.com/users/bewuethr/projects/1
     secrets:
