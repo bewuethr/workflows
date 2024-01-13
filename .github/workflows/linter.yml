@@ -43,15 +43,8 @@ jobs:
   lint:
     name: Lint code base
     runs-on: ubuntu-22.04
-    # env:
-    #   FETCH_DEPTH: 1
 
     steps:
-    #   - name: Override fetch depth for PRs from forks
-    #     if: github.event.pull_request.head.repo.fork
-    #     run: |
-    #       echo FETCH_DEPTH=0 >> "$GITHUB_ENV"
-
       - name: Check out repository
         uses: actions/checkout@v4.1.1
         with:
