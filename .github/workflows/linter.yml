@@ -43,6 +43,10 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: Dump payload
+        run: |
+          jq -C . "$GITHUB_EVENT_PATH"
+
       - name: Check out repository
         uses: actions/checkout@v4.1.1
         with:
