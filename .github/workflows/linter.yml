@@ -44,8 +44,12 @@ jobs:
 
     steps:
       - name: Dump payload
+        env:
+          fork: ${{ github.event.pull_request.head.repo.fork }}
         run: |
           jq -C . "$GITHUB_EVENT_PATH"
+
+          echo "$fork"
 
       - name: Check out repository
         uses: actions/checkout@v4.1.1
