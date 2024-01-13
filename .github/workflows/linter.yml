@@ -41,21 +41,19 @@ jobs:
   lint:
     name: Lint code base
     runs-on: ubuntu-22.04
+    env:
+      FETCH_DEPTH: 1
 
     steps:
-      - name: Dump payload
-        env:
-          fork: ${{ github.event.pull_request.head.repo.fork }}
+      - name: Override fetch depth for PRs from forks
+        if: github.event.pull_request.head.repo.fork
         run: |
-          jq -C . "$GITHUB_EVENT_PATH"
-
-          echo "$fork"
+          echo FETCH_DEPTH=0 >> "$GITHUB_ENV"
 
       - name: Check out repository
         uses: actions/checkout@v4.1.1
         with:
-          fetch-depth: >-
-            ${{ github.event.pull_request.head.repo.fork == true && 0 || 1 }}
+          fetch-depth: ${{ env.FETCH_DEPTH }}
           show-progress: false
 
       - name: Fetch default style files
