@@ -50,6 +50,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.1.1
         with:
+          fetch-depth: ${{ github.event.pull_request.head.repo.fork && 0 || 1 }}
           show-progress: false
 
       - name: Fetch default style files
