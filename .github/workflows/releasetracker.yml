@@ -31,7 +31,7 @@ jobs:
           show-progress: false
 
       - name: Update release tags for latest major and minor releases
-        uses: bewuethr/release-tracker-action@v1.5.0
+        uses: bewuethr/release-tracker-action@v1.6.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
