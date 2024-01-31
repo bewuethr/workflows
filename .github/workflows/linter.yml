@@ -48,8 +48,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4.1.1
         with:
-          fetch-depth: >-
-            ${{ github.event.pull_request.head.repo.fork && '0' || 1 }}
+          fetch-depth: 0
           show-progress: false
 
       - name: Fetch default style files
@@ -88,7 +87,7 @@ jobs:
               > "$fname"
 
       - name: Lint code base
-        uses: super-linter/super-linter/slim@v5.7.2
+        uses: super-linter/super-linter/slim@v6.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ inputs.default-branch }}
