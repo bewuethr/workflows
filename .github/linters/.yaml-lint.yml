@@ -9,6 +9,12 @@ rules:
   quoted-strings:
     quote-type: single
     required: only-when-needed
+    extra-allowed:
+      - \d+:\d+
 
   # Disable rule about non-explicitly typed truthy values
   truthy: disable
+
+  # Complain about long lines, but leave inline mappings alone
+  line-length:
+    allow-non-breakable-inline-mappings: true
