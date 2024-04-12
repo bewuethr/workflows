@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Add to project
-        uses: actions/add-to-project@v1.0.0
+        uses: actions/add-to-project@v1.0.1
         with:
           project-url: ${{ inputs.project-url }}
           github-token: ${{ secrets.github-token }}
