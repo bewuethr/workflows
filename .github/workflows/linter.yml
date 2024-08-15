@@ -87,7 +87,7 @@ jobs:
               > "$fname"
 
       - name: Lint code base
-        uses: super-linter/super-linter/slim@v6.8.0
+        uses: super-linter/super-linter/slim@v7.0.0
         env:
           GITHUB_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ inputs.default-branch }}
