@@ -40,3 +40,23 @@ MD035:
 # Require fenced code blocks
 MD046:
   style: fenced
+
+# Use asterisks for emphasis
+MD049:
+  style: asterisk
+
+# Use asterisks for strong
+MD050:
+  style: asterisk
+
+# Check link and images labels also in shortcut format
+MD052:
+  shortcut_syntax: true
+
+# Require pipes before and after all table cells
+MD055:
+  style: leading_and_trailing
+
+# Require all table delimiters to be aligned
+MD060:
+  style: aligned
